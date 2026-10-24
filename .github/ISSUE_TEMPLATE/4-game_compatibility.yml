@@ -1,0 +1,117 @@
+name: Game compatibility
+description: How a specific game works with Gazeora's capture. Reports that a game works are welcome too.
+labels: [compatibility]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every game sets up its graphics differently, so reports about single games are how Gazeora learns which ones work. Tell us about games that work as well as ones that don't.
+
+        Please don't use capture with online games whose terms forbid it.
+
+  - type: input
+    id: game
+    attributes:
+      label: Game
+      description: Its name, and the version or build if you know it.
+      placeholder: "Half-Life 2 (Steam, 2024 anniversary update)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Works fully
+        - Captures, but with problems (say which below)
+        - The session card says capture never started
+        - Black, frozen or garbled picture
+        - The game crashes or won't start with capture
+        - Blocked by anti-cheat
+    validations:
+      required: true
+
+  - type: dropdown
+    id: store
+    attributes:
+      label: Where the game comes from
+      options:
+        - Steam
+        - Epic Games Store
+        - GOG
+        - Ubisoft Connect
+        - EA app
+        - Xbox app or Microsoft Store
+        - Battle.net
+        - Standalone or other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: api
+    attributes:
+      label: Graphics API
+      description: The session card shows it once capture starts. Many games pick one in their settings.
+      options:
+        - Direct3D 8
+        - Direct3D 9
+        - Direct3D 10
+        - Direct3D 11
+        - Direct3D 12
+        - OpenGL
+        - Vulkan (not supported yet)
+        - Don't know
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bitness
+    attributes:
+      label: Gazeora release and game
+      description: Gazeora's x64 release captures 64-bit games, the x86 release 32-bit ones. The session card says if a game is the other kind.
+      options:
+        - x64 Gazeora, 64-bit game
+        - x86 Gazeora, 32-bit game
+        - The session card said the game is the other kind
+        - Don't know
+    validations:
+      required: true
+
+  - type: dropdown
+    id: launch
+    attributes:
+      label: How you started it
+      options:
+        - Play with capture
+        - Play with capture, through Steam
+        - Started on its own, then attached (GazeoraCLI attach)
+        - Other (say below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        What the session card showed (status, frame rate, resolution), the game's display mode (fullscreen, borderless, windowed), whether VR viewer mode or 3D from depth was on, and anything that made it work. Screenshots help.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Gazeora version
+      description: "**Settings → About**."
+      placeholder: "1.0.0 x64"
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: PC
+      placeholder: "Windows 11 24H2, Intel Arc A770, driver 32.0.101.6299"
+    validations:
+      required: true

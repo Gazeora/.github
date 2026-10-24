@@ -1,0 +1,106 @@
+name: Crash or freeze
+description: Gazeora, a game it launched, or the Android app closed, froze or stopped responding.
+labels: [crash]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Crashes are fixed fastest with the error details below. Each field says where to find them.
+
+  - type: dropdown
+    id: what-crashed
+    attributes:
+      label: What crashed or froze
+      options:
+        - Gazeora for Windows (the launcher)
+        - A game launched or attached with capture
+        - GazeoraCLI
+        - Android app
+        - The installer
+        - The whole PC (blue screen or hang)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: when
+    attributes:
+      label: When
+      options:
+        - Starting the program
+        - Launching a game with capture
+        - While a game was being captured
+        - When a player connected to the stream
+        - Changing a setting (codec, protocol, VR viewer mode...)
+        - Installing the USB driver
+        - Closing a game or Gazeora
+        - Other (say below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: how-often
+    attributes:
+      label: How often
+      options:
+        - Every time
+        - Sometimes
+        - Once so far
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you were doing
+      description: The steps just before it happened, and the game's name if one was running.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Gazeora version
+      description: Windows — **Settings → About**, and x64 or x86. Android — the app's version in Android's app info.
+      placeholder: "1.0.0 x64"
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: PC and phone
+      placeholder: |
+        Windows 11 24H2, AMD RX 7800 XT, driver 24.10.1
+        Galaxy S23, Android 14
+    validations:
+      required: true
+
+  - type: textarea
+    id: windows-error
+    attributes:
+      label: Windows error details
+      description: |
+        Open **Event Viewer → Windows Logs → Application** and find the **Application Error** entry from the time of the crash. Paste its text: the faulting application, the faulting module (for example `gazeora_hook.dll`) and the exception code. Also paste any error message Gazeora showed.
+      render: text
+
+  - type: textarea
+    id: android-log
+    attributes:
+      label: Android crash log
+      description: For the Android app, with the phone on USB debugging, run `adb logcat -b crash -d` and paste what it prints.
+      render: text
+
+  - type: textarea
+    id: stream-log
+    attributes:
+      label: Stream log
+      description: If the stream was involved, `%APPDATA%\Gazeora\stream.log`, copied before Gazeora starts again.
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I searched the existing issues and this isn't one of them.
+          required: true

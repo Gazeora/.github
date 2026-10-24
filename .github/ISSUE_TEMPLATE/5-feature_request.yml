@@ -1,0 +1,53 @@
+name: Feature request
+description: An idea for something new, or for something that could work better.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The best requests start from what you're trying to do, not from the solution. Open ideas you'd like to talk over first in Discussions.
+
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part
+      options:
+        - Gazeora for Windows (the launcher)
+        - GazeoraCLI
+        - Android app
+        - Installer
+        - Both the PC and the phone
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you're trying to do
+      description: The situation, and what gets in the way today.
+      placeholder: "When I play with the phone in the VR viewer, I can't ... because ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help
+      description: How you picture it working. Sketches or examples from other apps are welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you've tried instead
+      description: Workarounds, settings, or other tools.
+
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Helping out
+      options:
+        - label: I'd like to work on this myself.
+        - label: I can test it on my games and devices.

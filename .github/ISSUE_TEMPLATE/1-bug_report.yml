@@ -1,0 +1,110 @@
+name: Bug report
+description: Something works, but not the way it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. If the program closed or froze, use **Crash or freeze** instead; if it's slow or laggy, **Performance problem**; if one game doesn't capture, **Game compatibility**.
+
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part
+      options:
+        - Gazeora for Windows (the launcher)
+        - GazeoraCLI
+        - Android app
+        - Installer
+        - Both the PC and the phone (the stream between them)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw. Screenshots or a short video help a lot.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start Gazeora and open Settings → Frame stream
+        2. Set the protocol to ...
+        3. ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Gazeora version
+      description: Windows — **Settings → About**, and x64 or x86. Android — the app's version in Android's app info.
+      placeholder: "1.0.0 x64, Android app 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: protocol
+    attributes:
+      label: Stream protocol
+      description: "**Settings → Frame stream**, if the stream is involved."
+      options:
+        - Not about the stream
+        - RTSP over TCP
+        - RTSP over UDP
+        - UDP
+        - HTTP
+        - USB
+
+  - type: dropdown
+    id: player
+    attributes:
+      label: Player
+      options:
+        - Not about the stream
+        - Gazeora Android app
+        - VLC
+        - ffplay
+        - OBS
+        - Other (say which below)
+
+  - type: textarea
+    id: system
+    attributes:
+      label: PC and phone
+      description: Windows version, GPU; phone model and Android version if the phone is involved.
+      placeholder: |
+        Windows 11 24H2, NVIDIA RTX 3060
+        Pixel 7, Android 15
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Stream log
+      description: For stream problems, `%APPDATA%\Gazeora\stream.log` (rewritten each time Gazeora starts, so copy it right after the problem).
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I searched the existing issues and this isn't one of them.
+          required: true
+        - label: I read the **Known limitations** in the README.
+          required: true

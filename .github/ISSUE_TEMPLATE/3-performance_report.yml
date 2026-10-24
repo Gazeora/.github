@@ -1,0 +1,115 @@
+name: Performance problem
+description: Delay, stutter, a low frame rate, a blurry or smeared picture, or high CPU, GPU or battery use.
+labels: [performance]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Performance depends on the whole chain, from the game through the encoder and the network to the phone, so this form asks about each part. Numbers beat impressions: the stream probe (see **Measurements**) measures most of them.
+
+  - type: checkboxes
+    id: symptoms
+    attributes:
+      label: What you notice
+      options:
+        - label: Delay between the PC and the phone
+        - label: Stutter or uneven motion
+        - label: Low frame rate
+        - label: Blurry picture or blocky artifacts
+        - label: Picture smears, tears or freezes for a moment
+        - label: The game itself runs slower with capture
+        - label: High CPU or GPU use on the PC
+        - label: Phone gets hot or drains its battery
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe it
+      description: What it looks like, how bad it is, and when it started (after an update, with one game, at a certain time of day...).
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Gazeora version
+      description: Windows — **Settings → About**, and x64 or x86. Android — the app's version in Android's app info.
+      placeholder: "1.0.0 x64, Android app 1.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: game
+    attributes:
+      label: Game
+      description: Name, the graphics API and resolution its session card shows, and the frame rate it runs at.
+      placeholder: "Hollow Knight, Direct3D 11, 1920 × 1080, 60 fps"
+    validations:
+      required: true
+
+  - type: textarea
+    id: stream-settings
+    attributes:
+      label: Stream settings
+      description: From **Settings → Frame stream** and the VR settings.
+      value: |
+        Protocol: RTSP over TCP / RTSP over UDP / UDP / HTTP / USB
+        Codec: H.264 / H.265
+        Stream quality: 10 / 20 / 35 Mbit/s
+        Frame rate: 60 / 30
+        VR viewer mode: on / off
+        3D from depth: on / off
+        Hand gestures: on / off
+        Stream overlay: on / off
+    validations:
+      required: true
+
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection between the PC and the phone
+      options:
+        - USB cable
+        - Wi-Fi 6E or 7 (6 GHz)
+        - Wi-Fi 5 or 6 (5 GHz)
+        - Wi-Fi on 2.4 GHz
+        - PC on Ethernet, phone on Wi-Fi
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: system
+    attributes:
+      label: PC and phone
+      description: CPU, GPU and driver; phone model and Android version; the player if it isn't the Gazeora app.
+      placeholder: |
+        Ryzen 7 5800X, RTX 3070, driver 566.14, Windows 11 24H2
+        Pixel 8, Android 15
+    validations:
+      required: true
+
+  - type: textarea
+    id: measurements
+    attributes:
+      label: Measurements
+      description: |
+        Output of `gazeora_stream_probe.exe --seconds 30`, run on the streaming PC (it's in the installer's **Developer tools**). And any *Weak network* warning the session card showed, with its numbers.
+      render: text
+
+  - type: textarea
+    id: stream-log
+    attributes:
+      label: Stream log
+      description: "`%APPDATA%\\Gazeora\\stream.log`, from a session that showed the problem."
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I read **Wi-Fi and packet loss** in the streaming guide.
+          required: true
+        - label: I searched the existing issues and this isn't one of them.
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or help
+    url: https://github.com/orgs/Gazeora/discussions
+    about: Ask how to set something up, or talk over an idea, in Discussions.
+  - name: Security vulnerability
+    url: https://github.com/Gazeora/Gazeora/security/advisories/new
+    about: Report it privately here, not in a public issue.
