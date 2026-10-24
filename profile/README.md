@@ -45,7 +45,7 @@ It's free software, under the GNU GPL version 3.
 1. Install Gazeora on the PC: the **x64** release for 64-bit games, the **x86** release for
    32-bit ones. Installers are on the [download page](https://gazeora.github.io/download.html).
 2. Install the Android app on the phone, from the same page.
-3. Launch a game from Gazeora with **Play with capture**, then open the app. The PC shows up in
+3. Launch a game from Gazeora with **Play**, then open the app. The PC shows up in
    its list by itself.
 
 ## Contributing
