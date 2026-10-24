@@ -7,6 +7,7 @@ that doesn't have its own.
 |---|---|
 | `.github/ISSUE_TEMPLATE/` | The issue forms: bug report, crash or freeze, performance problem, game compatibility, feature request. Blank issues are off; questions go to Discussions and security problems to private reporting (`config.yml`) |
 | `.github/pull_request_template.md` | What every pull request describes and checks |
+| `profile/README.md` | The organization's profile, shown on <https://github.com/Gazeora> |
 
 The forms apply the labels `bug`, `crash`, `performance`, `compatibility` and `enhancement`.
 Each repository needs those labels for them to be applied.
