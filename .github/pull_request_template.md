@@ -34,4 +34,4 @@ Closes #
 - [ ] New logic has tests, where it can be tested without a GPU or a game.
 - [ ] The README and the guides in `docs/` say what changed for users.
 - [ ] Commits are small, each one line in Conventional Commits form.
-- [ ] I have the right to submit this work, and I agree that it's licensed under the repository's license (for Gazeora, the GPL version 3 with the terms in NOTICE).
+- [ ] I have the right to submit this work, and I've signed the Contributor License Agreement (CLA.md; the bot asks on your first pull request): it's licensed under the GPL version 3 with the terms in NOTICE, and Nithin Aashik may also license it under other terms, including the commercial license.

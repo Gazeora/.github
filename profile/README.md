@@ -61,3 +61,7 @@ Copyright (C) 2026 Nithin Aashik. Gazeora is free software under the GNU GPL ver
 the additional terms in each repository's `NOTICE`: modified versions keep the attribution
 "Gazeora by Nithin Aashik", are marked as modified, and don't use the Gazeora name or logo as
 their own ([TRADEMARKS.md](https://github.com/Gazeora/Gazeora/blob/master/TRADEMARKS.md)).
+
+Gazeora is also available under a commercial license, for products that can't follow the GPL,
+such as closed-source software or hardware that builds it in
+([COMMERCIAL-LICENSE.md](https://github.com/Gazeora/Gazeora/blob/master/COMMERCIAL-LICENSE.md)).
